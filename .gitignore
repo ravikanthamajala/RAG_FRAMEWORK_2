@@ -53,3 +53,8 @@ backend/uploads/
 
 #Temp
 .tmp/
+
+
+
+*.exe
+*.wbt
