@@ -1,0 +1,131 @@
+{
+  "experiment_name": "forecast_backtest_smoke",
+  "run_id": "reproducibility_smoke_test",
+  "config_path": "evaluation/configs/smoke_experiment.json",
+  "output_dir": "C:\\Users\\ravik\\OneDrive\\Desktop\\SRM\\FinalYRproject\\backend/evaluation/results\\forecast_backtest_smoke\\reproducibility_smoke_test",
+  "log_path": "C:\\Users\\ravik\\OneDrive\\Desktop\\SRM\\FinalYRproject\\backend/evaluation/results\\forecast_backtest_smoke\\reproducibility_smoke_test\\experiment.log",
+  "platform": "Windows-11-10.0.26220-SP0",
+  "processor": "Intel64 Family 6 Model 141 Stepping 1, GenuineIntel",
+  "cpu_count": 16,
+  "python": "3.14.2",
+  "dataset_points": 121,
+  "num_folds": 3,
+  "horizons": [
+    1,
+    3
+  ],
+  "models": [
+    "ARIMA",
+    "SARIMA",
+    "Additive",
+    "XGBoost",
+    "Hybrid"
+  ],
+  "use_log1p": true,
+  "max_lag": 12,
+  "lag_steps": [
+    1,
+    3,
+    6,
+    12
+  ],
+  "seasonal_period": 12,
+  "rolling_windows": [
+    3,
+    6,
+    12
+  ],
+  "feature_columns": [
+    "lag_1",
+    "lag_3",
+    "lag_6",
+    "lag_12",
+    "rolling_mean_3",
+    "rolling_mean_6",
+    "rolling_std_6",
+    "month",
+    "quarter",
+    "year",
+    "policy_event_flag",
+    "policy_intensity_score"
+  ],
+  "policy_events": [],
+  "interval_alpha": 0.05,
+  "n_bootstrap_samples": 50,
+  "dm_alpha": 0.05,
+  "robustness_noise_levels": [
+    5,
+    10,
+    20
+  ],
+  "robustness_exogenous_features": [
+    "month",
+    "quarter",
+    "year",
+    "policy_event_flag",
+    "policy_intensity_score"
+  ],
+  "model_hyperparameters": {
+    "ARIMA": {
+      "order": [
+        1,
+        1,
+        1
+      ],
+      "fallback_order": [
+        1,
+        1,
+        0
+      ]
+    },
+    "SARIMA": {
+      "order": [
+        1,
+        1,
+        1
+      ],
+      "seasonal_order": [
+        1,
+        1,
+        1,
+        12
+      ]
+    },
+    "Additive": {
+      "regressor": "LinearRegression",
+      "lag_steps": [
+        1,
+        3,
+        6,
+        12
+      ],
+      "rolling_windows": [
+        3,
+        6,
+        12
+      ],
+      "feature_scaler": "StandardScaler"
+    },
+    "XGBoost": {
+      "n_estimators": 300,
+      "learning_rate": 0.05,
+      "max_depth": 4,
+      "subsample": 0.9,
+      "colsample_bytree": 0.9,
+      "objective": "reg:squarederror",
+      "random_state": 42,
+      "n_jobs": 1
+    },
+    "Hybrid": {
+      "base_model": "ARIMA/SARIMA",
+      "residual_model": "XGBoost",
+      "residual_xgb_n_estimators": 250,
+      "residual_xgb_learning_rate": 0.05,
+      "residual_xgb_max_depth": 4,
+      "n_bootstrap_samples": 50,
+      "interval_alpha": 0.05,
+      "random_state": 42,
+      "n_jobs": 1
+    }
+  }
+}

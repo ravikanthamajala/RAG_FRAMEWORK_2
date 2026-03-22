@@ -1,0 +1,4 @@
+experiment_name,run_id,fold,origin_idx,train_start,train_end,train_points,test_start,test_end,test_points
+forecast_backtest_smoke,reproducibility_smoke_test,1,84,2014-01-01,2020-12-01,84,2021-01-01,2021-03-01,3
+forecast_backtest_smoke,reproducibility_smoke_test,2,96,2014-01-01,2021-12-01,96,2022-01-01,2022-03-01,3
+forecast_backtest_smoke,reproducibility_smoke_test,3,108,2014-01-01,2022-12-01,108,2023-01-01,2023-03-01,3

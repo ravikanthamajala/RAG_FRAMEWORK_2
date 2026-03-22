@@ -1,0 +1,242 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, just remove it.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{subcaption}
+
+% Define colors for code listing
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\begin{document}
+
+\title{Your Research Paper Title Here}
+
+\author{\IEEEauthorblockN{First Author\IEEEauthorrefmark{1}, Second Author\IEEEauthorrefmark{2}, Third Author\IEEEauthorrefmark{3}}
+\IEEEauthorblockA{\IEEEauthorrefmark{1}Department of Computer Science, University Name, City, Country \\
+Email: first.author@university.edu}
+\IEEEauthorblockA{\IEEEauthorrefmark{2}Department of Engineering, University Name, City, Country \\
+Email: second.author@university.edu}
+\IEEEauthorblockA{\IEEEauthorrefmark{3}Research Institute, Organization Name, City, Country \\
+Email: third.author@university.edu}}
+
+\maketitle
+
+\begin{abstract}
+This paper presents a comprehensive study on [Your Topic]. We propose a novel approach to address [Problem Statement] using [Your Methodology]. The experimental results demonstrate significant improvements of [Performance Metrics] compared to existing methods. Our contributions include [Key Contribution 1], [Key Contribution 2], and [Key Contribution 3]. Extensive evaluation on [Dataset/Benchmark] shows the effectiveness of our approach with [Result Summary].
+\end{abstract}
+
+\begin{IEEEkeywords}
+keyword1, keyword2, keyword3, keyword4, keyword5
+\end{IEEEkeywords}
+
+\section{Introduction}
+\label{sec:introduction}
+
+Your introduction section here. This should motivate the problem and provide context.
+
+The remainder of this paper is organized as follows. Section \ref{sec:related} reviews related work. Section \ref{sec:methodology} presents our methodology. Section \ref{sec:experiments} describes our experimental setup and results. Finally, Section \ref{sec:conclusion} concludes the paper.
+
+\section{Related Work}
+\label{sec:related}
+
+Discuss existing approaches and how your work differs. Cite relevant papers \cite{ref1, ref2}.
+
+\subsection{Subsection Example}
+You can create subsections as needed to organize your content better.
+
+\section{Proposed Methodology}
+\label{sec:methodology}
+
+\subsection{Problem Formulation}
+\label{subsec:problem}
+
+Describe the problem you are solving. You can use mathematical notation:
+
+Let $X = \{x_1, x_2, \ldots, x_n\}$ be a set of input samples. We aim to find a function $f: X \rightarrow Y$ that minimizes the loss function:
+
+\begin{equation}
+\mathcal{L}(f) = \sum_{i=1}^{n} L(f(x_i), y_i) + \lambda \Omega(f)
+\label{eq:loss}
+\end{equation}
+
+where $L$ is the loss function, $y_i$ is the ground truth label, and $\Omega(f)$ is the regularization term.
+
+\subsection{Proposed Approach}
+\label{subsec:approach}
+
+Detail your approach here. You can include algorithms:
+
+\begin{algorithm}
+\caption{Your Algorithm Name}
+\begin{algorithmic}
+\STATE \textbf{Input:} Dataset $X$, Learning rate $\alpha$
+\STATE \textbf{Output:} Trained model $\theta$
+\STATE Initialize $\theta$ randomly
+\WHILE{not converged}
+\STATE Compute gradient $\nabla \mathcal{L}(\theta)$
+\STATE Update $\theta \leftarrow \theta - \alpha \nabla \mathcal{L}(\theta)$
+\ENDWHILE
+\RETURN $\theta$
+\end{algorithmic}
+\end{algorithm}
+
+\section{Experimental Evaluation}
+\label{sec:experiments}
+
+\subsection{Experimental Setup}
+\label{subsec:setup}
+
+Describe your experimental setup, datasets, and baselines.
+
+\subsection{Results and Analysis}
+\label{subsec:results}
+
+\subsubsection{Quantitative Results}
+
+Include tables for your results:
+
+\begin{table}[H]
+\centering
+\caption{Comparison of Methods on Benchmark Dataset}
+\label{tab:results}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Method} & \textbf{Accuracy} & \textbf{Precision} & \textbf{F1-Score} \\
+\hline
+Baseline 1 & 85.2\% & 84.1\% & 0.842 \\
+\hline
+Baseline 2 & 87.5\% & 86.3\% & 0.865 \\
+\hline
+\textbf{Our Method} & \textbf{92.3\%} & \textbf{91.8\%} & \textbf{0.921} \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Qualitative Results}
+
+Include figures for visualization:
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{your_image_name.png}
+\caption{Descriptive caption for your figure. Explain what the figure shows and any important observations.}
+\label{fig:result1}
+\end{figure}
+
+You can also use subfigures:
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.45\linewidth}
+\centering
+\includegraphics[width=\linewidth]{image1.png}
+\caption{Subfigure caption 1}
+\label{fig:sub1}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.45\linewidth}
+\centering
+\includegraphics[width=\linewidth]{image2.png}
+\caption{Subfigure caption 2}
+\label{fig:sub2}
+\end{subfigure}
+\caption{Main figure caption explaining both subfigures}
+\label{fig:comparison}
+\end{figure}
+
+\subsection{Ablation Study}
+\label{subsec:ablation}
+
+Present ablation studies to validate design choices:
+
+\begin{table}[H]
+\centering
+\caption{Ablation Study Results}
+\label{tab:ablation}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Configuration} & \textbf{Accuracy} \\
+\hline
+Without Component A & 88.5\% \\
+Without Component B & 89.2\% \\
+Without Component C & 85.6\% \\
+Full Model & 92.3\% \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Computational Complexity}
+\label{subsec:complexity}
+
+Analyze time and space complexity of your method. You can use inline math for complexity notation: $O(n \log n)$ for time complexity and $O(n)$ for space complexity.
+
+\section{Discussion}
+\label{sec:discussion}
+
+Discuss your findings, limitations, and implications of your work.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+Summarize your main contributions and discuss future work directions. Reiterate why your approach is significant and how it advances the field.
+
+\section*{Acknowledgment}
+This work was supported by [Funding Organization] under Grant [Grant Number]. We thank [Individuals/Organizations] for their valuable feedback and discussions.
+
+\begin{thebibliography}{99}
+
+\bibitem{ref1} Author Name, ``Title of Paper,'' \textit{Journal Name}, vol. X, no. X, pp. XX--XX, Month Year, doi: 10.xxxx/xxxxx.
+
+\bibitem{ref2} Author Name and Co-Author Name, ``Title of Paper,'' in \textit{Proceedings of Conference Name}, City, Country, Month Year, pp. XX--XX, doi: 10.xxxx/xxxxx.
+
+\bibitem{ref3} Author Name, ``Title of Book,'' Publisher Name, City, Edition, Year.
+
+\bibitem{ref4} [Online]. Available: \url{https://www.example-website.com}. [Accessed: Month X, Year].
+
+\end{thebibliography}
+
+\begin{IEEEbiography}{John Doe}
+received the B.S. degree in Computer Science from University ABC, City, Country, in 20XX, and the M.S. degree in Computer Science from University XYZ, City, Country, in 20YY. He is currently pursuing the Ph.D. degree in Computer Science at University PQR, City, Country. His research interests include machine learning, deep learning, and artificial intelligence.
+\end{IEEEbiography}
+
+\begin{IEEEbiography}{Jane Smith}
+received the B.Eng. degree in Electronics Engineering from Institute ABC, City, Country, in 20XX, and the M.Tech degree in Information Technology from Institute XYZ, City, Country, in 20YY. She is currently working as a Research Scientist at Company XYZ. Her research interests include neural networks, computer vision, and data science.
+\end{IEEEbiography}
+
+\end{document}

@@ -1,0 +1,104 @@
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃           CHART VISUALIZATION - QUICK START GUIDE           ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+📋 HOW TO USE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. START BACKEND:
+   cd backend
+   python run.py
+
+2. START FRONTEND:
+   cd frontend
+   npm run dev
+
+3. ASK A COMPARISON QUERY:
+   ✓ "Compare India with and without port construction"
+   ✓ "Impact of EV infrastructure on growth by 2030"
+   ✓ "Show difference between scenarios"
+
+4. GET RESULTS:
+   ✓ Detailed text analysis
+   ✓ Bar chart (metric comparison)
+   ✓ Line chart (growth trends)
+   ✓ Pie chart (market share)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 KEYWORDS THAT TRIGGER CHARTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+• compare          • comparison       • vs / versus
+• with and without • difference       • impact of
+• effect of        • if i construct   • if i don't
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 CHART TYPES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+BAR CHART         - Side-by-side metric comparison
+                  - EV Adoption, GDP Growth, Jobs, Investment
+
+LINE CHART        - Growth trends over time (2024-2030)
+                  - Two scenarios plotted together
+
+PIE CHART         - Market share distribution
+                  - OEM categories in 2030
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 TOGGLE VISUALIZATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+In the frontend query form:
+☑ Enable chart visualization for comparison queries
+
+Checked   → Uses /api/query-with-charts (with visuals)
+Unchecked → Uses /api/query (text only)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🧪 TEST IT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+cd backend
+python test_charts.py
+
+Expected: ✅ All chart generation tests passed!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📁 KEY FILES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Backend:
+  app/services/chart_service.py    - Chart generation logic
+  app/agents/rag_agent.py          - RAG with chart support
+  app/routes/query.py              - API endpoints
+
+Frontend:
+  components/ChartDisplay.js       - Chart display UI
+  components/QueryForm.js          - Query form with toggle
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💡 EXAMPLE QUERY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+"If I construct ports for EV infrastructure, what would be 
+India's automotive market growth by 2030 compared to not 
+constructing them?"
+
+RESULT:
+  ✓ Comprehensive text analysis
+  ✓ Bar chart: EV Adoption 18% → 30%
+  ✓ Line chart: Growth trajectory 2024-2030
+  ✓ Pie chart: OEM market distribution
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📖 FULL GUIDE: CHART_VISUALIZATION_GUIDE.md
+
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛

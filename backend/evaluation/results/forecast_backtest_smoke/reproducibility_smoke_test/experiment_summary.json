@@ -1,0 +1,43 @@
+{
+  "experiment_name": "forecast_backtest_smoke",
+  "run_id": "reproducibility_smoke_test",
+  "config_path": "evaluation/configs/smoke_experiment.json",
+  "random_seed": 42,
+  "dataset_points": 121,
+  "num_folds": 3,
+  "models": [
+    "ARIMA",
+    "SARIMA",
+    "Additive",
+    "XGBoost",
+    "Hybrid"
+  ],
+  "best_models_by_horizon": [
+    {
+      "horizon": 1,
+      "best_model": "ARIMA",
+      "RMSE": 2871.3100292275476,
+      "MAE": 2053.8042246262307,
+      "MAPE": 5.602441380894202
+    },
+    {
+      "horizon": 3,
+      "best_model": "ARIMA",
+      "RMSE": 7241.667687212974,
+      "MAE": 4933.670765800355,
+      "MAPE": 16.024355402017722
+    }
+  ],
+  "artifacts": {
+    "predictions": "predictions_all.csv",
+    "metrics": "metrics_by_seed_model_horizon.csv",
+    "validation_folds": "validation_fold_results.csv",
+    "training_log": "training_log.csv",
+    "validation_summary": "validation_summary.csv",
+    "runtime_log": "runtime_log.csv",
+    "dm_results": "dm_test_results.csv",
+    "rolling_windows": "rolling_windows_log.csv",
+    "figures_manifest": "forecast_figures_manifest.csv",
+    "manifest": "experiment_manifest.json"
+  }
+}

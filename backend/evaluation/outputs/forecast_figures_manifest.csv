@@ -1,0 +1,3 @@
+figure,png_path,pdf_path
+actual_vs_predicted_horizons,backend/evaluation/outputs\forecast_actual_vs_predicted_horizons.png,backend/evaluation/outputs\forecast_actual_vs_predicted_horizons.pdf
+hybrid_forecast_intervals,backend/evaluation/outputs\hybrid_forecast_intervals_by_horizon.png,backend/evaluation/outputs\hybrid_forecast_intervals_by_horizon.pdf

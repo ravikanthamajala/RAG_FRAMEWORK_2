@@ -1,0 +1,496 @@
+{
+  "root": "C:\\Users\\ravik\\OneDrive\\Desktop\\SRM\\FinalYRproject",
+  "candidates": [
+    {
+      "file": "C:\\Users\\ravik\\OneDrive\\Desktop\\SRM\\FinalYRproject\\backend\\app\\agents\\market_forecaster.py",
+      "score": 6,
+      "hits": {
+        "ARIMA": 2,
+        "XGBoost": 3,
+        "Agentic_RAG": 1
+      },
+      "signatures": [
+        "class AutomotiveMarketForecaster:"
+      ],
+      "imports": [
+        "import pandas as pd",
+        "import numpy as np",
+        "from prophet import Prophet",
+        "from statsmodels.tsa.arima.model import ARIMA",
+        "from datetime import datetime, timedelta",
+        "import warnings"
+      ]
+    },
+    {
+      "file": "C:\\Users\\ravik\\OneDrive\\Desktop\\SRM\\FinalYRproject\\backend\\app\\routes\\smart_upload.py",
+      "score": 6,
+      "hits": {
+        "ARIMA": 1,
+        "XGBoost": 2,
+        "Agentic_RAG": 3
+      },
+      "signatures": [
+        "def clean_for_json(obj):",
+        "def upload_and_forecast():",
+        "def forecast_from_document(doc_id):",
+        "def extraction_summary():"
+      ],
+      "imports": [
+        "from flask import Blueprint, request, jsonify, current_app",
+        "from app.utils.document_processor import process_document, allowed_file",
+        "from app.utils.data_extractor import DataExtractor",
+        "from app.services.forecasting_service import ForecastingService",
+        "from app.services.forecasting_service_v2 import AdvancedForecastingService",
+        "from app.schemas.forecast import ForecastRequest, ForecastResult, EnsembleForecastResult",
+        "from app.models.document import Document",
+        "from app.utils.embeddings import generate_embedding",
+        "from app.agents.policy_analyzer import PolicyAnalyzer",
+        "from app.utils.policy_visualizer import PolicyVisualizer",
+        "import os",
+        "import traceback",
+        "from difflib import SequenceMatcher",
+        "import json",
+        "import numpy as np",
+        "import pandas as pd",
+        "from pydantic import ValidationError"
+      ]
+    },
+    {
+      "file": "C:\\Users\\ravik\\OneDrive\\Desktop\\SRM\\FinalYRproject\\backend\\evaluation\\discover_model_entrypoints.py",
+      "score": 5,
+      "hits": {
+        "ARIMA": 1,
+        "XGBoost": 2,
+        "LSTM": 1,
+        "Hybrid_LSTM_XGBoost": 1
+      },
+      "signatures": [
+        "def scan_py_file(file_path: Path):",
+        "def main():"
+      ],
+      "imports": [
+        "import json",
+        "import re",
+        "from pathlib import Path"
+      ]
+    },
+    {
+      "file": "C:\\Users\\ravik\\OneDrive\\Desktop\\SRM\\FinalYRproject\\backend\\evaluation\\run_real_backtest.py",
+      "score": 5,
+      "hits": {
+        "ARIMA": 2,
+        "XGBoost": 3
+      },
+      "signatures": [
+        "def set_seed(seed: int):",
+        "def mae(y, yhat):",
+        "def rmse(y, yhat):",
+        "def mape(y, yhat, eps=1e-8):",
+        "def r2(y, yhat):",
+        "def dm_test(y_true: np.ndarray, pred_a: np.ndarray, pred_b: np.ndarray, h: int = 1):",
+        "class Config:",
+        "def build_xgb_train_matrix(series: np.ndarray, max_lag: int = 12):",
+        "def forecast_xgb_recursive(train: np.ndarray, steps: int, seed: int, max_lag: int = 12):",
+        "def forecast_arima(train: np.ndarray, steps: int):",
+        "def run_backtest(cfg: Config):"
+      ],
+      "imports": [
+        "import os",
+        "import json",
+        "import time",
+        "import random",
+        "import platform",
+        "from dataclasses import dataclass",
+        "from typing import Dict, List, Tuple",
+        "import numpy as np",
+        "import pandas as pd",
+        "from scipy import stats",
+        "from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score",
+        "from statsmodels.tsa.arima.model import ARIMA"
+      ]
+    },
+    {
+      "file": "C:\\Users\\ravik\\OneDrive\\Desktop\\SRM\\FinalYRproject\\backend\\app\\services\\forecasting_service.py",
+      "score": 5,
+      "hits": {
+        "ARIMA": 2,
+        "XGBoost": 3
+      },
+      "signatures": [
+        "class ForecastingService:"
+      ],
+      "imports": [
+        "import pandas as pd",
+        "import numpy as np",
+        "from prophet import Prophet",
+        "from statsmodels.tsa.arima.model import ARIMA",
+        "from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score",
+        "from datetime import datetime, timedelta",
+        "from typing import Dict, Tuple, Optional",
+        "import warnings"
+      ]
+    },
+    {
+      "file": "C:\\Users\\ravik\\OneDrive\\Desktop\\SRM\\FinalYRproject\\backend\\app\\services\\forecasting_service_v2.py",
+      "score": 5,
+      "hits": {
+        "ARIMA": 2,
+        "XGBoost": 3
+      },
+      "signatures": [
+        "class AdvancedForecastingService:"
+      ],
+      "imports": [
+        "import pandas as pd",
+        "import numpy as np",
+        "from prophet import Prophet",
+        "from statsmodels.tsa.arima.model import ARIMA",
+        "from statsmodels.tsa.stattools import adfuller",
+        "from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score",
+        "from sklearn.preprocessing import StandardScaler",
+        "from datetime import datetime, timedelta",
+        "from typing import Dict, Tuple, Optional, List",
+        "import warnings",
+        "import logging",
+        "from app.schemas.forecast import ("
+      ]
+    },
+    {
+      "file": "C:\\Users\\ravik\\OneDrive\\Desktop\\SRM\\FinalYRproject\\backend\\test_forecasting.py",
+      "score": 3,
+      "hits": {
+        "ARIMA": 1,
+        "XGBoost": 2
+      },
+      "signatures": [],
+      "imports": [
+        "import sys",
+        "import pandas as pd",
+        "import numpy as np",
+        "from datetime import datetime, timedelta"
+      ]
+    },
+    {
+      "file": "C:\\Users\\ravik\\OneDrive\\Desktop\\SRM\\FinalYRproject\\backend\\test_production_system.py",
+      "score": 3,
+      "hits": {
+        "ARIMA": 1,
+        "XGBoost": 2
+      },
+      "signatures": [
+        "def create_sample_data():",
+        "def test_data_quality():",
+        "def test_feature_engineering():",
+        "def test_ensemble_forecasting():",
+        "def test_pydantic_validation():",
+        "def main():"
+      ],
+      "imports": [
+        "import sys",
+        "import os",
+        "import pandas as pd",
+        "import numpy as np",
+        "from datetime import datetime, timedelta",
+        "from app.services.forecasting_service_v2 import AdvancedForecastingService",
+        "from app.schemas.forecast import DataQualityMetrics, ForecastPoint, ModelMetrics"
+      ]
+    },
+    {
+      "file": "C:\\Users\\ravik\\OneDrive\\Desktop\\SRM\\FinalYRproject\\backend\\app\\agents\\policy_analyzer.py",
+      "score": 3,
+      "hits": {
+        "Agentic_RAG": 3
+      },
+      "signatures": [
+        "class PolicyAnalyzer:"
+      ],
+      "imports": [
+        "import json",
+        "import os",
+        "from typing import Dict, List, Tuple, Any",
+        "from langchain_community.llms import Ollama"
+      ]
+    },
+    {
+      "file": "C:\\Users\\ravik\\OneDrive\\Desktop\\SRM\\FinalYRproject\\backend\\app\\agents\\rag_agent.py",
+      "score": 3,
+      "hits": {
+        "Agentic_RAG": 3
+      },
+      "signatures": [],
+      "imports": [
+        "from langchain_ollama import OllamaLLM",
+        "from app.utils.vector_search import search_similar_documents",
+        "from app.utils.embeddings import generate_embedding",
+        "from app.services.chart_service import ChartService",
+        "import os",
+        "from typing import Dict, Any, List"
+      ]
+    },
+    {
+      "file": "C:\\Users\\ravik\\OneDrive\\Desktop\\SRM\\FinalYRproject\\backend\\app\\schemas\\forecast.py",
+      "score": 3,
+      "hits": {
+        "ARIMA": 1,
+        "XGBoost": 2
+      },
+      "signatures": [
+        "class ForecastRequest(BaseModel):",
+        "class DataQualityMetrics(BaseModel):",
+        "class ModelMetrics(BaseModel):",
+        "class ForecastPoint(BaseModel):",
+        "class ForecastResult(BaseModel):",
+        "class EnsembleForecastResult(BaseModel):",
+        "class TimeSeriesData(BaseModel):"
+      ],
+      "imports": [
+        "from pydantic import BaseModel, Field, field_validator, model_validator",
+        "from typing import List, Optional, Dict, Any, Literal",
+        "from datetime import datetime",
+        "import numpy as np"
+      ]
+    },
+    {
+      "file": "C:\\Users\\ravik\\OneDrive\\Desktop\\SRM\\FinalYRproject\\test_enhancements.py",
+      "score": 2,
+      "hits": {
+        "Agentic_RAG": 2
+      },
+      "signatures": [],
+      "imports": [
+        "import sys",
+        "from app.agents.rag_agent import detect_query_type, prioritize_documents_by_type"
+      ]
+    },
+    {
+      "file": "C:\\Users\\ravik\\OneDrive\\Desktop\\SRM\\FinalYRproject\\backend\\utils\\metrics.py",
+      "score": 2,
+      "hits": {
+        "Agentic_RAG": 2
+      },
+      "signatures": [
+        "class MetricsCollector:"
+      ],
+      "imports": [
+        "import json",
+        "import time",
+        "from datetime import datetime",
+        "from pathlib import Path",
+        "from typing import Any, Dict, List"
+      ]
+    },
+    {
+      "file": "C:\\Users\\ravik\\OneDrive\\Desktop\\SRM\\FinalYRproject\\backend\\app\\models\\document.py",
+      "score": 2,
+      "hits": {
+        "Agentic_RAG": 2
+      },
+      "signatures": [
+        "class Document:"
+      ],
+      "imports": [
+        "from app.database import db"
+      ]
+    },
+    {
+      "file": "C:\\Users\\ravik\\OneDrive\\Desktop\\SRM\\FinalYRproject\\backend\\app\\routes\\query.py",
+      "score": 2,
+      "hits": {
+        "Agentic_RAG": 2
+      },
+      "signatures": [
+        "def query_documents():",
+        "def query_documents_with_visualization():"
+      ],
+      "imports": [
+        "from flask import Blueprint, request, jsonify",
+        "from app.agents.rag_agent import query_agent, query_agent_with_charts"
+      ]
+    },
+    {
+      "file": "C:\\Users\\ravik\\OneDrive\\Desktop\\SRM\\FinalYRproject\\backend\\app\\services\\chart_service.py",
+      "score": 2,
+      "hits": {
+        "Agentic_RAG": 2
+      },
+      "signatures": [
+        "class ChartService:"
+      ],
+      "imports": [
+        "import matplotlib",
+        "import matplotlib.pyplot as plt",
+        "import io",
+        "import base64",
+        "from typing import Dict, List, Any",
+        "import numpy as np"
+      ]
+    },
+    {
+      "file": "C:\\Users\\ravik\\OneDrive\\Desktop\\SRM\\FinalYRproject\\backend\\app\\utils\\vector_search.py",
+      "score": 2,
+      "hits": {
+        "Agentic_RAG": 2
+      },
+      "signatures": [
+        "def search_similar_documents(query_embedding, top_k=5):"
+      ],
+      "imports": [
+        "from app.models.document import Document",
+        "from app.utils.embeddings import generate_embedding, cosine_similarity",
+        "import numpy as np"
+      ]
+    },
+    {
+      "file": "C:\\Users\\ravik\\OneDrive\\Desktop\\SRM\\FinalYRproject\\backend\\config.py",
+      "score": 1,
+      "hits": {
+        "Agentic_RAG": 1
+      },
+      "signatures": [
+        "class Config:"
+      ],
+      "imports": [
+        "import os",
+        "from dotenv import load_dotenv"
+      ]
+    },
+    {
+      "file": "C:\\Users\\ravik\\OneDrive\\Desktop\\SRM\\FinalYRproject\\backend\\app\\database.py",
+      "score": 1,
+      "hits": {
+        "Agentic_RAG": 1
+      },
+      "signatures": [
+        "def get_db():",
+        "class DatabaseProxy:"
+      ],
+      "imports": [
+        "from pymongo import MongoClient",
+        "from config import Config"
+      ]
+    },
+    {
+      "file": "C:\\Users\\ravik\\OneDrive\\Desktop\\SRM\\FinalYRproject\\backend\\app\\__init__.py",
+      "score": 1,
+      "hits": {
+        "Agentic_RAG": 1
+      },
+      "signatures": [
+        "def create_app():"
+      ],
+      "imports": [
+        "from flask import Flask",
+        "from flask_cors import CORS",
+        "from config import Config",
+        "from app.database import db"
+      ]
+    },
+    {
+      "file": "C:\\Users\\ravik\\OneDrive\\Desktop\\SRM\\FinalYRproject\\backend\\app\\agents\\forecast_insights_agent.py",
+      "score": 1,
+      "hits": {
+        "Agentic_RAG": 1
+      },
+      "signatures": [
+        "class ForecastInsightsAgent:"
+      ],
+      "imports": [
+        "from typing import Dict, Any, List",
+        "import os",
+        "from langchain_community.llms import Ollama"
+      ]
+    },
+    {
+      "file": "C:\\Users\\ravik\\OneDrive\\Desktop\\SRM\\FinalYRproject\\backend\\app\\agents\\policy_simulator.py",
+      "score": 1,
+      "hits": {
+        "Agentic_RAG": 1
+      },
+      "signatures": [
+        "class PolicySimulator:"
+      ],
+      "imports": [
+        "import numpy as np",
+        "from typing import Dict, List, Any",
+        "import pandas as pd"
+      ]
+    },
+    {
+      "file": "C:\\Users\\ravik\\OneDrive\\Desktop\\SRM\\FinalYRproject\\backend\\app\\routes\\analysis.py",
+      "score": 1,
+      "hits": {
+        "Agentic_RAG": 1
+      },
+      "signatures": [
+        "def forecast_market():",
+        "def forecast_ev_adoption():",
+        "def forecast_oem_share():",
+        "def extract_policies():",
+        "def compare_policies():",
+        "def get_policy_recommendations():",
+        "def get_oem_strategy():",
+        "def get_market_insights():"
+      ],
+      "imports": [
+        "from flask import Blueprint, request, jsonify",
+        "from app.agents.market_forecaster import AutomotiveMarketForecaster",
+        "from app.agents.policy_analyzer import PolicyAnalyzer",
+        "from datetime import datetime",
+        "import pandas as pd"
+      ]
+    },
+    {
+      "file": "C:\\Users\\ravik\\OneDrive\\Desktop\\SRM\\FinalYRproject\\backend\\app\\routes\\upload.py",
+      "score": 1,
+      "hits": {
+        "Agentic_RAG": 1
+      },
+      "signatures": [
+        "def upload_file():"
+      ],
+      "imports": [
+        "from flask import Blueprint, request, jsonify",
+        "from app.utils.document_processor import process_document, allowed_file",
+        "from app.utils.embeddings import generate_embedding",
+        "from app.models.document import Document",
+        "import os"
+      ]
+    },
+    {
+      "file": "C:\\Users\\ravik\\OneDrive\\Desktop\\SRM\\FinalYRproject\\backend\\app\\utils\\data_extractor.py",
+      "score": 1,
+      "hits": {
+        "ARIMA": 1
+      },
+      "signatures": [
+        "class DataExtractor:"
+      ],
+      "imports": [
+        "import pandas as pd",
+        "import numpy as np",
+        "import openpyxl",
+        "import PyPDF2",
+        "import re",
+        "from datetime import datetime",
+        "from typing import Dict, List, Tuple, Optional"
+      ]
+    },
+    {
+      "file": "C:\\Users\\ravik\\OneDrive\\Desktop\\SRM\\FinalYRproject\\backend\\app\\utils\\embeddings.py",
+      "score": 1,
+      "hits": {
+        "Agentic_RAG": 1
+      },
+      "signatures": [
+        "def get_embeddings():",
+        "def generate_embedding(text):",
+        "def cosine_similarity(a, b):"
+      ],
+      "imports": [
+        "from langchain_ollama import OllamaEmbeddings",
+        "import numpy as np",
+        "import os"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+experiment_name,run_id,horizon,Model A,Model B,DM statistic,p-value,Statistically significant (True/False)
+forecast_backtest_smoke,reproducibility_smoke_test,1,Hybrid,ARIMA,,,False
+forecast_backtest_smoke,reproducibility_smoke_test,1,Hybrid,Additive,,,False
+forecast_backtest_smoke,reproducibility_smoke_test,1,Hybrid,XGBoost,,,False
+forecast_backtest_smoke,reproducibility_smoke_test,3,Hybrid,ARIMA,,,False
+forecast_backtest_smoke,reproducibility_smoke_test,3,Hybrid,Additive,,,False
+forecast_backtest_smoke,reproducibility_smoke_test,3,Hybrid,XGBoost,,,False

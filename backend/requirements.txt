@@ -1,0 +1,37 @@
+Flask==2.3.3
+Flask-CORS==4.0.0
+pymongo==4.6.0
+certifi>=2023.0.0
+langchain
+langchain-community
+langchain-ollama
+ollama
+PyPDF2==3.0.1
+PyCryptodome>=3.18.0
+openpyxl==3.1.2
+python-dotenv==1.0.0
+werkzeug==2.3.7
+urllib3==2.0.7
+# Data Processing & Analysis
+pandas>=2.0.0
+numpy>=1.24.0
+# NLP & ML for automotive market analysis (precompiled for Python 3.14)
+scikit-learn>=1.3.0
+spacy>=3.7.2
+transformers>=4.33.0
+# Time Series Forecasting for market predictions
+statsmodels>=0.14.0
+prophet>=1.1.5
+xgboost>=2.0.0
+# Visualization & Analytics
+matplotlib>=3.8.0
+seaborn>=0.12.2
+Pillow>=10.0.0
+psutil>=5.9.0
+
+# Research Novelty Additions - Advanced Analysis
+shap>=0.42.0                 # Explainable AI for model interpretability
+lime>=0.2.0                  # Local interpretability explanations
+networkx>=3.0                # Supply chain network analysis
+beautifulsoup4>=4.12.0       # Web scraping for real-time sentiment
+requests>=2.31.0             # HTTP requests for data fetching

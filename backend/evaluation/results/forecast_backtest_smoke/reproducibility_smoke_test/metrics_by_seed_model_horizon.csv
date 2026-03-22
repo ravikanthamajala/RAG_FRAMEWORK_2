@@ -1,0 +1,11 @@
+experiment_name,run_id,model,horizon,MAE,RMSE,MAPE,N
+forecast_backtest_smoke,reproducibility_smoke_test,ARIMA,1,2053.8042246262307,2871.3100292275476,5.602441380894202,3
+forecast_backtest_smoke,reproducibility_smoke_test,Additive,1,13168.665524607082,13848.170819326151,33.89431225799413,3
+forecast_backtest_smoke,reproducibility_smoke_test,Hybrid,1,6893.8363795240975,8861.84603886824,15.811926167346988,3
+forecast_backtest_smoke,reproducibility_smoke_test,SARIMA,1,3392.3416635872113,3699.897838845876,8.012672311747464,3
+forecast_backtest_smoke,reproducibility_smoke_test,XGBoost,1,8405.827829071617,12436.59663949946,17.235822261891723,3
+forecast_backtest_smoke,reproducibility_smoke_test,ARIMA,3,4933.670765800355,7241.667687212974,16.024355402017722,3
+forecast_backtest_smoke,reproducibility_smoke_test,Additive,3,22417.329924593087,23587.988497665694,51.95235962200645,3
+forecast_backtest_smoke,reproducibility_smoke_test,Hybrid,3,9642.698353473379,10290.069805103636,24.612266010020033,3
+forecast_backtest_smoke,reproducibility_smoke_test,SARIMA,3,8810.87285900675,9446.787611854854,23.479617808095806,3
+forecast_backtest_smoke,reproducibility_smoke_test,XGBoost,3,15091.324809701227,19685.56200207195,32.73337321391297,3

@@ -1,0 +1,3 @@
+figure,png_path,pdf_path
+actual_vs_predicted_horizons,C:\Users\ravik\OneDrive\Desktop\SRM\FinalYRproject\backend/evaluation/results\forecast_backtest_smoke\reproducibility_smoke_test\forecast_actual_vs_predicted_horizons.png,C:\Users\ravik\OneDrive\Desktop\SRM\FinalYRproject\backend/evaluation/results\forecast_backtest_smoke\reproducibility_smoke_test\forecast_actual_vs_predicted_horizons.pdf
+hybrid_forecast_intervals,C:\Users\ravik\OneDrive\Desktop\SRM\FinalYRproject\backend/evaluation/results\forecast_backtest_smoke\reproducibility_smoke_test\hybrid_forecast_intervals_by_horizon.png,C:\Users\ravik\OneDrive\Desktop\SRM\FinalYRproject\backend/evaluation/results\forecast_backtest_smoke\reproducibility_smoke_test\hybrid_forecast_intervals_by_horizon.pdf

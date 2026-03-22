@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart Visualization Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .loading {
+            display: none;
+            color: #666;
+            margin: 10px 0;
+        }
+        .loading.active {
+            display: block;
+        }
+        .response {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-left: 4px solid #4CAF50;
+            border-radius: 4px;
+        }
+        .charts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .chart {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+        }
+        .chart-header {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+        }
+        .chart-body {
+            padding: 15px;
+        }
+        .chart img {
+            width: 100%;
+            height: auto;
+        }
+        .sources {
+            margin-top: 15px;
+            padding: 15px;
+            background: #e3f2fd;
+            border-radius: 4px;
+        }
+        .source {
+            background: white;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 4px;
+            border-left: 3px solid #2196F3;
+        }
+        .confidence {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .confidence.high { background: #4CAF50; color: white; }
+        .confidence.medium { background: #FFC107; color: #333; }
+        .confidence.low { background: #F44336; color: white; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Chart Visualization Test</h1>
+        <p>Click the button to test if charts are being generated and displayed correctly.</p>
+        
+        <div>
+            <button onclick="testWithMock()">Test with Mock Data (Fast)</button>
+            <button onclick="testWithReal()">Test with Real LLM (Slow)</button>
+        </div>
+        
+        <div class="loading" id="loading">⏳ Processing query... (This may take 30-60 seconds)</div>
+        
+        <div id="result"></div>
+    </div>
+
+    <script>
+        async function testWithMock() {
+            const resultDiv = document.getElementById('result');
+            const loadingDiv = document.getElementById('loading');
+            
+            resultDiv.innerHTML = '';
+            loadingDiv.classList.add('active');
+            
+            try {
+                const response = await fetch('http://localhost:4000/api/test-charts', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ query: 'What will be EV growth by 2030?' })
+                });
+                
+                const data = await response.json();
+                console.log('Response:', data);
+                displayResults(data);
+            } catch (error) {
+                resultDiv.innerHTML = `<div style="color: red;">Error: ${error.message}</div>`;
+            } finally {
+                loadingDiv.classList.remove('active');
+            }
+        }
+        
+        async function testWithReal() {
+            const resultDiv = document.getElementById('result');
+            const loadingDiv = document.getElementById('loading');
+            
+            resultDiv.innerHTML = '';
+            loadingDiv.classList.add('active');
+            
+            try {
+                const response = await fetch('http://localhost:4000/api/query-with-charts', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ query: 'What will be EV growth by 2030?' })
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                console.log('Response:', data);
+                displayResults(data);
+            } catch (error) {
+                resultDiv.innerHTML = `<div style="color: red;">
+                    <strong>Error:</strong> ${error.message}<br>
+                    <small>Tip: This test uses the real LLM which can be slow. Try "Test with Mock Data" first.</small>
+                </div>`;
+            } finally {
+                loadingDiv.classList.remove('active');
+            }
+        }
+        
+        function displayResults(data) {
+            const resultDiv = document.getElementById('result');
+            
+            let html = '';
+            
+            // Confidence
+            if (data.confidence) {
+                const confClass = data.confidence.toLowerCase();
+                html += `<div class="confidence ${confClass}">${data.confidence} Confidence</div>`;
+            }
+            
+            // Response text
+            html += `<div class="response"><strong>Response:</strong><br>${data.response || 'No response'}</div>`;
+            
+            // Sources
+            if (data.sources && data.sources.length > 0) {
+                html += '<div class="sources"><strong>📄 Sources:</strong>';
+                data.sources.forEach(source => {
+                    html += `
+                        <div class="source">
+                            <strong>${source.source_id}.</strong> ${source.filename} 
+                            <span style="color: #666;">[${source.document_type}]</span>
+                            <span style="float: right;">Similarity: ${(source.similarity_score * 100).toFixed(1)}%</span>
+                        </div>
+                    `;
+                });
+                html += '</div>';
+            }
+            
+            // Charts
+            if (data.charts && data.charts.length > 0) {
+                html += '<div class="charts">';
+                data.charts.forEach(chart => {
+                    html += `
+                        <div class="chart">
+                            <div class="chart-header">
+                                <strong>${chart.title}</strong><br>
+                                <small>${chart.description || ''}</small>
+                            </div>
+                            <div class="chart-body">
+                                <img src="${chart.image}" alt="${chart.title}">
+                                <div style="color: #666; margin-top: 10px;">
+                                    <small>Type: ${chart.type}</small>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                html += '</div>';
+            } else {
+                html += '<div style="color: orange; margin-top: 20px;">⚠️ No charts generated</div>';
+            }
+            
+            resultDiv.innerHTML = html;
+        }
+    </script>
+</body>
+</html>

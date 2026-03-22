@@ -1,0 +1,13 @@
+{
+  "input_csv": "backend\\uploads\\EV_Dataset.csv",
+  "target_col": "EV_Sales_Quantity",
+  "repeats": 5,
+  "sizes": [
+    10000,
+    50000,
+    100000
+  ],
+  "inference_batch_size": 128,
+  "prophet_available": false,
+  "xgboost_available": true
+}
